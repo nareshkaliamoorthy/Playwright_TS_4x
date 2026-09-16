@@ -172,3 +172,17 @@ When adding new tests:
 ## License
 
 ISC
+
+## API Automation Notes
+
+This project includes a lightweight API layer. For enterprise usage consider:
+
+- **Centralized config:** add a `config` module for base URLs, timeouts and auth, driven by environment variables.
+- **Typed models:** export request/response interfaces from `api/models/` and import them in clients and tests.
+- **Strong typing for request options:** derive Playwright request option types from `APIRequestContext` (e.g. `type PostOptions = Parameters<APIRequestContext['post']>[1]`).
+- **Client responsibilities:** keep `BaseApiClient` minimal (raw requests) and implement business parsing/validation in service clients.
+- **Retries & resiliency:** add an optional retry/backoff wrapper for transient failures and per-request timeouts.
+- **Schema validation:** validate responses with `zod` or `ajv` for stable contracts and clearer assertions in tests.
+- **Logging & artifacts:** log structured request/response data and save dumps on failures for debugging.
+
+If you'd like, I can implement these quick wins: add typed models, derive request option types, and add a retry wrapper.

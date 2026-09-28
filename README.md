@@ -1,3 +1,19 @@
+# Playwright_TS_4x
+
+Playwright TypeScript API + UI test project (legacy 4.x layout).
+
+## Run tests
+
+- Run all tests:
+
+```bash
+npx playwright test
+```
+
+## Notes
+
+- This repo contains API clients under `api/client` and tests under `tests/`.
+- Add a `tsconfig.json` and enable `tsc --noEmit` if you want compile-time checks.
 # Playwright TypeScript 4.x - Test Automation Framework
 
 A modern test automation framework built with Playwright and TypeScript using the Page Object Model (POM) pattern for testing web applications.
